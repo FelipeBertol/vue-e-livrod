@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+    "autor": "J.R.R. Tolkien",
+    "generos": ["Fantasia", "Aventura"],
+    "descricao": "A épica jornada de Frodo Bolseiro para destruir o Um Anel, enquanto ele e seus companheiros enfrentam perigos, traições e batalhas para salvar a Terra Média das forças de Sauron.",
+    "imagem":"https://m.media-amazon.com/images/I/81MZ8OjmQrL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "generos": ["Distopia", "Ficção Política"],
+    "descricao": "Uma história ambientada em um futuro totalitário onde o governo controla tudo, até os pensamentos. Winston Smith luta para preservar sua liberdade e humanidade em um mundo dominado pelo Grande Irmão.",
+    "imagem":"https://m.media-amazon.com/images/I/61t0bwt1s3L._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 3,
+    "titulo": "Dom Casmurro",
+    "autor": "Machado de Assis",
+    "generos": ["Romance", "Literatura Brasileira"],
+    "descricao": "Bentinho narra sua vida marcada pela dúvida e pela tragédia, enquanto busca responder se sua esposa, Capitu, foi infiel ou não. Uma análise profunda da mente humana e das relações sociais.",
+    "imagem":"https://m.media-amazon.com/images/I/61Z2bMhGicL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 4,
+    "titulo": "Orgulho e Preconceito",
+    "autor": "Jane Austen",
+    "generos": ["Romance", "Clássico"],
+    "descricao": "A história de Elizabeth Bennet e sua relação turbulenta com o orgulhoso Sr. Darcy, enquanto ambos desafiam suas primeiras impressões e descobrem o amor verdadeiro.",
+    "imagem":"https://m.media-amazon.com/images/I/719esIW3D7L._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 5,
+    "titulo": "O Pequeno Príncipe",
+    "autor": "Antoine de Saint-Exupéry",
+    "generos": ["Infantil", "Fábula"],
+    "descricao": "Um piloto perdido no deserto encontra um pequeno príncipe de outro planeta e aprende lições valiosas sobre amizade, amor e o verdadeiro sentido da vida.",
+    "imagem":"https://m.media-amazon.com/images/I/81TmOZIXvzL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 6,
+    "titulo": "Moby Dick",
+    "autor": "Herman Melville",
+    "generos": ["Aventura", "Clássico"],
+    "descricao": "O capitão Ahab lidera sua tripulação em uma obsessiva caça à baleia branca Moby Dick, enquanto explora temas de vingança, destino e a luta do homem contra a natureza.",
+    "imagem":"https://m.media-amazon.com/images/I/71pDLEFif3L._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 7,
+    "titulo": "Harry Potter e a Pedra Filosofal",
+    "autor": "J.K. Rowling",
+    "generos": ["Fantasia", "Aventura"],
+    "descricao": "Harry Potter descobre ser um bruxo e começa sua jornada no mundo mágico, enfrentando perigos e descobrindo o mistério em torno de sua conexão com o vilão Voldemort.",
+    "imagem":"https://m.media-amazon.com/images/I/61jgm6ooXzL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 8,
+    "titulo": "A Revolução dos Bichos",
+    "autor": "George Orwell",
+    "generos": ["Satírica", "Fábula"],
+    "descricao": "Uma alegoria política onde os animais de uma fazenda se rebelam contra os humanos, mas acabam enfrentando a corrupção de seus próprios líderes.",
+    "imagem":"https://m.media-amazon.com/images/I/91BsZhxCRjL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 9,
+    "titulo": "Drácula",
+    "autor": "Bram Stoker",
+    "generos": ["Terror", "Gótico"],
+    "descricao": "A história do vampiro Conde Drácula e sua luta contra Jonathan Harker e outros personagens para espalhar sua maldição pela Inglaterra.",
+    "imagem":"https://m.media-amazon.com/images/I/61MgodE1s0L._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 10,
+    "titulo": "O Conde de Monte Cristo",
+    "autor": "Alexandre Dumas",
+    "generos": ["Aventura", "Drama"],
+    "descricao": "Edmond Dantès é traído por seus amigos e preso injustamente. Após escapar, ele busca vingança, enquanto se transforma no misterioso Conde de Monte Cristo.",
+    "imagem":"https://m.media-amazon.com/images/I/81ZswN9PVPL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 11,
+    "titulo": "Cem Anos de Solidão",
+    "autor": "Gabriel García Márquez",
+    "generos": ["Realismo Mágico", "Drama"],
+    "descricao": "A saga da família Buendía na cidade fictícia de Macondo, explorando temas como amor, solidão e a inevitabilidade do destino.",
+    "imagem":"https://m.media-amazon.com/images/I/511NRhFHZbL._SY445_SX342_.jpg"
+  },
+  {
+    "id": 12,
+    "titulo": "Crime e Castigo",
+    "autor": "Fyodor Dostoiévski",
+    "generos": ["Drama", "Psicológico"],
+    "descricao": "Raskólnikov, um jovem estudante, comete um assassinato e enfrenta uma luta interna entre sua culpa e sua visão filosófica da moralidade.",
+    "imagem":"https://m.media-amazon.com/images/I/916WkSH4cGL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 13,
+    "titulo": "O Morro dos Ventos Uivantes",
+    "autor": "Emily Brontë",
+    "generos": ["Romance", "Drama"],
+    "descricao": "A trágica e intensa história de amor entre Heathcliff e Catherine, marcada por vingança, paixão e destruição.",
+    "imagem":"https://m.media-amazon.com/images/I/61hDcknuYqL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 14,
+    "titulo": "Os Miseráveis",
+    "autor": "Victor Hugo",
+    "generos": ["Drama", "Histórico"],
+    "descricao": "Jean Valjean, um ex-prisioneiro, tenta se redimir enquanto é perseguido pelo implacável inspetor Javert, em meio às mudanças sociais e políticas da França do século XIX.",
+    "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsvDPpMbJ70r127Ty5ek_2c-NVbLr4jFITKyCnLXSsAt-0IS5AD4PQxIgp8GYUJitvLBc"
+  },
+  {
+    "id": 15,
+    "titulo": "O Hobbit",
+    "autor": "J.R.R. Tolkien",
+    "generos": ["Fantasia", "Aventura"],
+    "descricao": "Bilbo Bolseiro embarca em uma aventura inesperada para ajudar os anões a recuperar seu tesouro roubado por Smaug, o dragão.",
+    "imagem":"https://m.media-amazon.com/images/I/91wfHwESyfL._AC_UF1000,1000_QL80_.jpg"
+  }
+]

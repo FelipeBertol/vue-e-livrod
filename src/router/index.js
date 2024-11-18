@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeScreen from '../screens/HomeScreen.vue';
-import LibraryScreen from '../screens/LibraryScreen.vue'; 
-import BookScreen from '../screens/BookScreen.vue'; 
+import LibraryScreen from '../screens/LibraryScreen.vue';
+import BookScreen from '../screens/BookScreen.vue';
 
 const routes = [
   {
@@ -15,9 +15,10 @@ const routes = [
     component: LibraryScreen,
   },
   {
-    path: '/livro',
+    path: '/livro/:id',
     name: 'livro',
     component: BookScreen,
+    props: true,
   },
 ];
 

@@ -1,8 +1,12 @@
+<!--Navbar Component-->
+
 <template>
     <div class="container">
         <h1>E-Livros</h1>
-        <router-link to="/" class="button">Início</router-link>
-        <router-link to="/biblioteca" class="button">Sua biblioteca</router-link>
+        <div class="column">
+            <router-link to="/" class="button">Início</router-link>
+            <router-link to="/biblioteca" class="button">Sua biblioteca</router-link>
+        </div>
     </div>
 </template>
 
@@ -21,6 +25,12 @@
     opacity: 100%;
     column-gap:5rem
 }
+
+.column {
+    display: flex;
+    column-gap:1rem;
+}
+
 h1 {
     margin: 0 !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

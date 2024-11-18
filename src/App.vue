@@ -1,3 +1,5 @@
+<!-- APP -->
+
 <template>
   <div id="app">
      <AppNavbar/>
@@ -22,6 +24,9 @@ export default {
   * {
     color:black;
     text-decoration: none;
+    padding: 0;
+    margin:0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
   }
   .teste {
       background-color: #ffff;

@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "E-Livros": "file:",
+    "pinia": "^2.2.6",
     "vue": "^3.2.13",
+    "vue-biblioteca": "file:",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {

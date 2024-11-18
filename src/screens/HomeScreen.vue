@@ -1,36 +1,40 @@
 
  <!-- Home Screen -->
-<template>
+ <template>
   <div class="biblioteca">
     <div class="body-container">
-      <BookCard/>
-      <BookCard/>
-      <BookCard/>
+      <BookCard
+        v-for="(livro, index) in livros"
+        :key="index"
+        :livro="livro"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import { useLivrosStore } from '../utils/useLivrosStore';
+import livros from '../assets/livros.json';
 import BookCard from '../components/BookCard.vue';
+
 export default {
   components: {
-    BookCard
+    BookCard,
   },
-  data() {
+  setup() {
+    const livrosStore = useLivrosStore();
+
+    // Inicializa os livros no store se ainda não foram carregados
+    if (livrosStore.livros.length === 0) {
+      livrosStore.carregarLivros(livros);
+    }
+
     return {
-      livros: [] // Inicializando a lista de livros
+      livros: livrosStore.livros,
     };
   },
-  methods: {
-    adicionarLivro(livro) {
-      this.livros.push(livro); 
-    },
-    deletarLivro(index) {
-      this.livros.splice(index, 1); 
-    }
-  }
 };
-</script>
+</script> 
 
 <style scoped>
 
@@ -48,6 +52,9 @@ export default {
 
 .body-container {
   display:flex;
+  justify-content: center;
   gap:2rem;
+  flex-wrap: wrap;
+  padding: 2rem 5rem;
 }
 </style>
