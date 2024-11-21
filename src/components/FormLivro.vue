@@ -1,94 +1,99 @@
 <template>
   <div class="formulario">
     <h1>Cadastro de Livros</h1>
-    <div>
+    <div class="cont">
       <label for="titulo">Título:</label>
-      <input v-model="novoLivro.titulo" id="titulo" placeholder="Digite o título do livro" />
-
+      <input 
+        v-model="novoLivro.titulo" 
+        id="titulo" 
+        placeholder="Digite o título do livro" 
+      />
     </div>
-
-    <div>
+    <div class="cont">
       <label for="autor">Autor:</label>
-    <input v-model="novoLivro.autor" id="autor" placeholder="Digite o nome do autor" />
-
+      <input 
+        v-model="novoLivro.autor" 
+        id="autor" 
+        placeholder="Digite o nome do autor" 
+      />
     </div>
-
-    <div>
+    <div class="cont">
       <label for="genero">Gênero:</label>
-    <input v-model="novoLivro.genero" id="genero" placeholder="Digite o gênero do livro" />
-
+      <input 
+        v-model="novoLivro.genero" 
+        id="genero" 
+        placeholder="Digite o gênero do livro" 
+      />
     </div>
-
     <button @click="cadastrarLivro">Cadastrar Livro</button>
   </div>
 </template>
 
 <script>
+import { useLivrosStore } from '../utils/useLivrosStore';
+
 export default {
   data() {
     return {
       novoLivro: {
         titulo: '',
         autor: '',
-        genero: ''
-      }
+        genero: '',
+      },
     };
   },
   methods: {
-
     cadastrarLivro() {
-      if (this.novoLivro.titulo && this.novoLivro.autor && this.novoLivro.genero) {
-        this.$emit('adicionar-livro', { ...this.novoLivro });
-        this.novoLivro.titulo = '';
-        this.novoLivro.autor = '';
-        this.novoLivro.genero = '';
-      } else {
-        alert("Preencha todos os campos para cadastrar o livro.");
+      const { titulo, autor, genero } = this.novoLivro;
+
+      if (!titulo.trim() || !autor.trim() || !genero.trim()) {
+        alert('Todos os campos são obrigatórios.');
+        return;
       }
-    }
-  }
+
+      const livrosStore = useLivrosStore();
+      const novoLivro = { ...this.novoLivro, id: Date.now(), generos: [genero] };
+
+      livrosStore.adicionarLivro(novoLivro);
+      this.novoLivro = { titulo: '', autor: '', genero: '' };
+    },
+  },
 };
 </script>
 
+
 <style scoped>
-h1{text-align: center;}
 .formulario {
   background-color: white;
-  margin-bottom: 20px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  row-gap: 2rem;
+  gap: 1.5rem;
   padding: 2rem;
   border-radius: 1rem;
-  width: 25vw;
+  max-width: 400px;
+  margin: auto;
 }
-
-.formulario label {
-  display: block;
-  margin: 10px 0 5px;
-}
-
-.formulario input {
-  width: 94%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: .5rem;
-}
-
 button {
-  padding: 10px 15px;
-  margin-top: 10px;
-  background-color: rgba(0, 193, 193, 0.647);
-  color: rgb(0, 0, 0);
-  font-weight: bolder;
-  text-transform: uppercase;
+  background-color: #00c1c1;
   border: none;
-  cursor: pointer;
   border-radius: 1.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+small {
+  color: red;
+  font-size: 0.8rem;
 }
 
-button:hover {
-  background-color: rgb(0, 89, 89);
+.cont {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border-radius: 1rem;
+  padding: .6rem;
 }
 </style>

@@ -2,22 +2,32 @@
   <div class="lista-livros">
     <h2>Livros Cadastrados</h2>
     <ul>
-      <li v-for="(livro, index) in livros" :key="index">
+      <li v-for="livro in livros" :key="livro.id">
         <strong>{{ livro.titulo }}</strong> por {{ livro.autor }} - <em>{{ livro.genero }}</em>
-        <button @click="$emit('deletar-livro', index)">Deletar</button>
+        <button @click="deletarLivro(livro.id)">Deletar</button>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { computed } from 'vue';
+import { useLivrosStore } from '@/stores/livros';
+
 export default {
-  props: {
-    livros: {
-      type: Array,
-      required: true
-    }
-  }
+  setup() {
+    const livrosStore = useLivrosStore();
+    const livros = computed(() => livrosStore.livrosAdicionados);
+
+    const deletarLivro = (livroId) => {
+      livrosStore.removerLivro(livroId);
+    };
+
+    return {
+      livros,
+      deletarLivro,
+    };
+  },
 };
 </script>
 
@@ -34,19 +44,11 @@ export default {
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 button {
   background-color: #e57373;
-  padding: 10px 15px;
-    border-radius: 1.5rem;
-    border: none;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-button:hover {
-  background-color: #d32f2f;
+  border: none;
+  border-radius: 1.5rem;
 }
 </style>

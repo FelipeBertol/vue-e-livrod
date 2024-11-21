@@ -1,14 +1,13 @@
-<!-- Library Screen-->
-
 <template>
   <div class="biblioteca">
     <h1>Minha Biblioteca</h1>
     <div class="body-container">
       <BookCard
-        v-for="(livro) in livrosAdicionados"
+        v-for="livro in livrosAdicionados"
         :key="livro.id"
         :livro="livro"
-        @adicionarLivro="adicionarLivro"
+        @removerLivro="removerLivro"
+        isLibrary="yes"
       />
     </div>
   </div>
@@ -24,12 +23,14 @@ export default {
   },
   setup() {
     const livrosStore = useLivrosStore();
-    
-    const livrosAdicionados = livrosStore.livros;
+
+    const removerLivro = (id) => {
+      livrosStore.removerLivro(id);
+    };
 
     return {
-      livrosAdicionados,
-      livrosStore,
+      livrosAdicionados: livrosStore.livrosAdicionados,
+      removerLivro,
     };
   },
 };

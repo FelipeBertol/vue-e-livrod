@@ -1,12 +1,12 @@
-
- <!-- Home Screen -->
- <template>
+<!--Home Screen--><template>
   <div class="biblioteca">
+    <FormLivro />
     <div class="body-container">
       <BookCard
-        v-for="(livro, index) in livros"
-        :key="index"
+        v-for="livro in livros"
+        :key="livro.id"
         :livro="livro"
+        isLibrary="no"
       />
     </div>
   </div>
@@ -16,15 +16,16 @@
 import { useLivrosStore } from '../utils/useLivrosStore';
 import livros from '../assets/livros.json';
 import BookCard from '../components/BookCard.vue';
+import FormLivro from '../components/FormLivro.vue';
 
 export default {
   components: {
     BookCard,
+    FormLivro
   },
   setup() {
     const livrosStore = useLivrosStore();
 
-    // Inicializa os livros no store se ainda não foram carregados
     if (livrosStore.livros.length === 0) {
       livrosStore.carregarLivros(livros);
     }
@@ -34,10 +35,9 @@ export default {
     };
   },
 };
-</script> 
+</script>
 
 <style scoped>
-
 .biblioteca {
   display: flex;
   align-items: center;
@@ -47,13 +47,12 @@ export default {
   margin: 0 auto;
   padding: 6rem 0;
   font-family: Arial, sans-serif;
-
 }
 
 .body-container {
-  display:flex;
+  display: flex;
   justify-content: center;
-  gap:2rem;
+  gap: 2rem;
   flex-wrap: wrap;
   padding: 2rem 5rem;
 }

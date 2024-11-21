@@ -1,4 +1,3 @@
-<!-- Book Screen-->
 <template>
   <div class="container">
     <h1>{{ livro.titulo }}</h1>
@@ -8,11 +7,12 @@
       </div>
       <div class="column">
         <p><strong>Autor:</strong> {{ livro.autor }}</p>
-        <p><strong>Gêneros:</strong> {{ livro.generos.join(', ') }}</p>
-        <p class="description"><strong>Descrição:</strong> {{ livro.descricao }}</p>
+        <p><strong>Gêneros:</strong> {{ livro.generos?.join(', ') }}</p>
+        <p><strong>Descrição:</strong> {{ livro.descricao }}</p>
         <div class="row">
-          <AddButton v-if="!jaAdicionado" @click="adicionarLivro" />
-          <RemoveButton v-if="jaAdicionado" @click="removerLivro" />
+          <!-- Alterna dinamicamente entre Adicionar e Remover -->
+          <AddButton v-if="!jaAdicionado" @adicionarLivro="adicionarLivro" />
+          <RemoveButton v-else @removerLivro="removerLivro" />
         </div>
       </div>
     </div>
@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import { useRoute } from 'vue-router'; // Importa o hook useRoute
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import { useLivrosStore } from '../utils/useLivrosStore';
 import AddButton from '../components/book-components/AddButton.vue';
 import RemoveButton from '../components/book-components/RemoveButton.vue';
-
 
 export default {
   components: {
@@ -32,22 +32,34 @@ export default {
     RemoveButton,
   },
   setup() {
-    const route = useRoute(); 
+    const route = useRoute();
     const livrosStore = useLivrosStore();
 
-    const livroId = route.params.id; 
+    // Obtém o livro baseado no ID da rota
+    const livro = livrosStore.livros.find((livro) => livro.id === Number(route.params.id)) || {};
 
-    const livro = livrosStore.livros.find((livro) => livro.id === Number(livroId));
+    // Computed reativo para verificar se o livro está adicionado
+    const jaAdicionado = computed(() => livrosStore.jaAdicionado(livro.id));
 
-    console.log("Teste")
+    // Adiciona o livro à lista
+    const adicionarLivro = () => {
+      livrosStore.adicionarLivro(livro);
+    };
+
+    // Remove o livro da lista
+    const removerLivro = () => {
+      livrosStore.removerLivro(livro.id);
+    };
+
     return {
       livro,
-      livrosStore,
+      jaAdicionado,
+      adicionarLivro,
+      removerLivro,
     };
   },
 };
 </script>
-
 
 <style scoped>
 .container {
